@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_31a9e344-9e78-451c-b4cb-621ca1d07a8b",
+      "org_id": "user_587aa6b6-a783-494b-b983-bbb80b957e67",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_31a9e344-9e78-451c-b4cb-621ca1d07a8b.git",
+      "name": "project-fb",
+      "alias": "project-fb"
+    }
+  ]
+}

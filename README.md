@@ -8,7 +8,7 @@
 * Name must be unique & not empty
 
 ## Search
-* Filter can take a list of String: if all those String are contained either 
+* Filter can take a list of String: if any of those String is contained either 
 in the project's name or in one of its skills name, then return the project
 * Projects are sorted by name (asc)
 

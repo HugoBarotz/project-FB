@@ -13,34 +13,28 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.List;
 
 @RestController
-@ComponentScan(basePackages = "com.hugo.project")
-@RequestMapping("/apis/v1/project")
+@RequestMapping("/api/v1/project")
 public class ProjectController {
 
     @Autowired
     private ProjectService projectService;
 
-    @GetMapping()
-    public Iterable<Project> getAllProjects() {
-        return projectService.getAllProjects();
-    }
-
-    @CrossOrigin(origins = "http://localhost:63342")
+    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
     @PostMapping("/_create")
     public CreateProjectResponse createProject(@RequestBody Project project) {
         return projectService.createProject(project);
     }
-    @CrossOrigin(origins = "http://localhost:63342")
+    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
     @DeleteMapping("/_delete_bulk")
     public DeleteBulkProjectResponse deleteBulkProject(@RequestBody List<String> ids){
         return projectService.deleteBulkProject(ids);
     }
-    @CrossOrigin(origins = "http://localhost:63342")
+    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
     @PutMapping("/_update")
     public UpdateProjectResponse updateProject(@RequestBody Project project){
         return projectService.updateProject(project);
     }
-    @CrossOrigin(origins = "http://localhost:63342")
+    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
     @PostMapping("/_search")
     public SearchProjectResponse searchProject(@RequestBody List<String> filter){
         return projectService.searchProject(filter);
