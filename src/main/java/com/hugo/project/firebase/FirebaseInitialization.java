@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 @Configuration
 public class FirebaseInitialization {
@@ -18,10 +19,10 @@ public class FirebaseInitialization {
     @PostConstruct
     public void initialization() throws IOException {
         Resource resource = new ClassPathResource("ServiceAccountKey.json");
-        FileInputStream serviceAccount = new FileInputStream(resource.getFile());
+        InputStream serviceAccountStream = resource.getInputStream();
 
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                .setCredentials(GoogleCredentials.fromStream(serviceAccountStream))
                 .build();
 
         FirebaseApp.initializeApp(options);
