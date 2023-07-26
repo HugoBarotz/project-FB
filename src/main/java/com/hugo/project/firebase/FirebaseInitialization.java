@@ -6,6 +6,7 @@ import com.google.firebase.FirebaseOptions;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -14,7 +15,11 @@ public class FirebaseInitialization {
 
     @PostConstruct
     public void initialization() throws IOException {
-        FileInputStream serviceAccount = new FileInputStream("./ServiceAccountKey.json");
+        String filePath = "ServiceAccountKey.json";
+        File file = new File(filePath);
+        System.out.println("File path: " + file.getAbsolutePath());
+
+        FileInputStream serviceAccount = new FileInputStream("ServiceAccountKey.json");
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
