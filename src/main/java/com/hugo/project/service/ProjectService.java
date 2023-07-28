@@ -136,7 +136,9 @@ public class ProjectService {
                     "name", updatedProject.getName(),
                     "description", updatedProject.getDescription(),
                     "skills", updatedProject.getSkills(),
-                    "githubLink", updatedProject.getGithubLink()
+                    "githubLink", updatedProject.getGithubLink(),
+                    "applicationType", updatedProject.getApplicationType(),
+                    "image", updatedProject.getImage()
             );
 
             future.get(); // wait doc update
