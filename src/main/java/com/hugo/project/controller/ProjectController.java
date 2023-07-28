@@ -19,22 +19,22 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
+    @CrossOrigin(origins = {"https://myportfolio-eb126.web.app/", "http://localhost:63342"})
     @PostMapping("/_create")
     public CreateProjectResponse createProject(@RequestBody Project project) {
         return projectService.createProject(project);
     }
-    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
+    @CrossOrigin(origins = {"https://myportfolio-eb126.web.app/", "http://localhost:63342"})
     @DeleteMapping("/_delete_bulk")
     public DeleteBulkProjectResponse deleteBulkProject(@RequestBody List<String> ids){
         return projectService.deleteBulkProject(ids);
     }
-    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
+    @CrossOrigin(origins = {"https://myportfolio-eb126.web.app/", "http://localhost:63342"})
     @PutMapping("/_update")
     public UpdateProjectResponse updateProject(@RequestBody Project project){
         return projectService.updateProject(project);
     }
-    @CrossOrigin(origins = "https://myportfolio-eb126.web.app/")
+    @CrossOrigin(origins = {"https://myportfolio-eb126.web.app/", "http://localhost:63342"})
     @PostMapping("/_search")
     public SearchProjectResponse searchProject(@RequestBody List<String> filter){
         return projectService.searchProject(filter);

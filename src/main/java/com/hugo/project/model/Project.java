@@ -20,6 +20,10 @@ public class Project {
 
     private String githubLink;
 
+    private String applicationType;
+
+    private byte[] image;
+
     public Project(String id) {
         this.id = id;
     }
