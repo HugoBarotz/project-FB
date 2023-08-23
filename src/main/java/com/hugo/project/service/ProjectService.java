@@ -196,7 +196,7 @@ public class ProjectService {
         if (skills != null && !skills.isEmpty()) {
             return skills.stream()
                     .map(String::toLowerCase)
-                    .anyMatch(constraint.toLowerCase()::contains);
+                    .anyMatch(constraint.toLowerCase()::equals);
         }
 
         return false;
